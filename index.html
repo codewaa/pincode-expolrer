@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>India Pincode Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <header class="card-head">
+          <div class="icon">📍</div>
+          <h1>India Pincode Explorer</h1>
+          <p class="subtitle">Try out the API live! Enter any 6-digit Indian Pincode below.</p>
+        </header>
+
+        <form id="pincode-form" class="search-row" onsubmit="return false;">
+          <label for="pincode" class="sr-only">Enter pincode</label>
+          <div class="input-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM10 15a5 5 0 110-10 5 5 0 010 10z"/></svg>
+            <input id="pincode" name="pincode" type="text" inputmode="numeric" pattern="\d{6}" maxlength="6" placeholder="e.g. 110001, 400001" aria-label="Enter 6-digit pincode">
+          </div>
+          <button id="search-btn" class="btn">Search</button>
+        </form>
+
+        <div class="empty-state">
+          <svg class="map-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3l-5 2-5-2-6 2v13l6-2 5 2 5-2 5 2v-13l-5-2zM9 18.6l-4 .9V6.5l4-1.3v13.4zM11 5.2l4 1.6v13.4l-4-1.6V5.2zM20 19.5l-4 .9V7.2l4-1.6v13.9z"/></svg>
+          <p class="empty-text">Enter a pincode to explore!</p>
+          <p id="message" class="empty-text">Sample Text</p>
+        </div>
+        <div id="results" class="results-grid" aria-live="polite"></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
